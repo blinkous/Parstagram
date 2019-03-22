@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AlamofireImage
+import Parse
 
 // "UIImagePickerControllerDelegate" allows access to camera events, to user the imagePicker, you need the navControllerDelegate too
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -20,6 +22,29 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onSubmitButton(_ sender: Any) {
+        // Create a PF Object that will be a table in the dashboard
+        let post = PFObject(className: "Posts")
+        
+        post["caption"] = commentField.text
+        post["author"] = PFUser.current()
+        
+        // This is saved in a table just for the photos
+        // Save the image as a png
+        let imageData = imageView.image!.pngData()
+        // Create a parse file
+        let file = PFFileObject(data: imageData!)
+        
+        post["image"] = file
+        
+        post.saveInBackground { (success, error) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+                print("saved")
+            } else {
+                print("bleh")
+            }
+        }
+        
     }
     
     @IBAction func onCameraButton(_ sender: Any) {
@@ -39,6 +64,21 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         }
         present(picker, animated: true, completion: nil)
     }
+    // Once the user selects an image, we want to get that image and place it in the view
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        
+        //Resize image for easier uploading to heroku
+        let size = CGSize(width: 300, height: 300)
+        let scaledImage = image.af_imageScaled(to: size)
+        
+        //Set the imageview to the selected image
+        imageView.image = scaledImage
+        
+        // Dismiss the camera view
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
