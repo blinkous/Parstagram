@@ -32,6 +32,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
         // For the comment bar to be dismissed by dragging down the tableview
         tableView.keyboardDismissMode = .interactive
         
