@@ -70,7 +70,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         //Resize image for easier uploading to heroku
         let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
+        let scaledImage = image.af_imageAspectScaled(toFill: size)
         
         //Set the imageview to the selected image
         imageView.image = scaledImage
