@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Parstagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,6 +168,11 @@
                         <viewLayoutGuide key="safeArea" id="KS2-U2-dAD"/>
                     </view>
                     <navigationItem key="navigationItem" id="vs5-Nn-Dka">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="e9i-C1-uJA">
+                            <connections>
+                                <action selector="onLogoutButton:" destination="iMs-Bl-jgk" id="str-yb-AP5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="+" image="insta_camera_btn" id="hJ9-wb-wFb">
                             <connections>
                                 <segue destination="N7K-fB-7AF" kind="presentation" id="fcj-iM-ZCW"/>
@@ -175,6 +180,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="logoutButton" destination="e9i-C1-uJA" id="WHI-aE-X6K"/>
                         <outlet property="tableView" destination="hio-VZ-4Cz" id="Fyi-PP-fnw"/>
                     </connections>
                 </viewController>
@@ -248,7 +254,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6vb-vy-qca">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="koj-Hh-TBS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="koj-Hh-TBS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zue-7C-yND">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

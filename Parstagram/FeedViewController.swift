@@ -12,6 +12,7 @@ import AlamofireImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     // Create an empty array of PFObjects
     var posts = [PFObject]()
@@ -64,7 +65,21 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
     }
-
+    @IBAction func onLogoutButton(_ sender: Any) {
+        // Log out the parse user
+        PFUser.logOut()
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = main.instantiateViewController(withIdentifier: "LoginViewController")
+        
+        // Access the window via appdelegate
+        // The app has access to a shared application object that will be casted as type AppDelegate because the AppDelegate.swift file has the window object
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        
+        // Change the window to the login view controller
+        delegate.window?.rootViewController = loginViewController
+    }
+    
     /*
     // MARK: - Navigation
 
