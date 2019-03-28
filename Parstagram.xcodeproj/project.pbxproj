@@ -16,6 +16,7 @@
 		56413788224458E0000F531E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56413787224458E0000F531E /* FeedViewController.swift */; };
 		5641378A22445F87000F531E /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641378922445F87000F531E /* CameraViewController.swift */; };
 		5641378C2244681D000F531E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5641378B2244681D000F531E /* PostCell.swift */; };
+		564BFA41224D519F003BD729 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564BFA40224D519F003BD729 /* CommentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		56413787224458E0000F531E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5641378922445F87000F531E /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5641378B2244681D000F531E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		564BFA40224D519F003BD729 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		7BB126A849690F43DB319CF6 /* Pods_Parstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA17E22DCCB3192895FED857 /* Pods-Parstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parstagram.release.xcconfig"; path = "Target Support Files/Pods-Parstagram/Pods-Parstagram.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				56413785224458B9000F531E /* LoginViewController.swift */,
 				56413787224458E0000F531E /* FeedViewController.swift */,
 				5641378922445F87000F531E /* CameraViewController.swift */,
+				564BFA40224D519F003BD729 /* CommentCell.swift */,
 				5641378B2244681D000F531E /* PostCell.swift */,
 			);
 			path = Parstagram;
@@ -228,6 +231,7 @@
 				56413788224458E0000F531E /* FeedViewController.swift in Sources */,
 				5641377422444C34000F531E /* AppDelegate.swift in Sources */,
 				5641378C2244681D000F531E /* PostCell.swift in Sources */,
+				564BFA41224D519F003BD729 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
